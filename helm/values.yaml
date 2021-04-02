@@ -1,6 +1,6 @@
 image:
   repository: httpd
-  tag: alpine
+  tag: latest
 
 livenessProbe:
   httpGet:
