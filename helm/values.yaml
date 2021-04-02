@@ -1,5 +1,5 @@
 image:
-  repository: httpd
+  repository: nginx
   tag: latest
 
 livenessProbe:
