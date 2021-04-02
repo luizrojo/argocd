@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probe
+  namespace: default
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      name: probe
+  template:
+    metadata:
+      labels:
+        name: probe
+    spec:
+      containers:
+      - name: probe
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        livenessProbe:
+          {{- toYaml .Values.livenessProbe | trim | nindent 12 }}
+        readinessProbe:
+          {{- toYaml .Values.readinessProbe | trim | nindent 12 }}
+        ports:
+        - containerPort: 80
+          name: http
+
