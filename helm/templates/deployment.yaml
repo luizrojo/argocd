@@ -4,7 +4,7 @@ metadata:
   name: probe
   namespace: darwin
 spec:
-  replicas: 2
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 1
