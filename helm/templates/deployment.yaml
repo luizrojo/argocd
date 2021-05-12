@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: probe
-  namespace: default
+  namespace: darwin
 spec:
   replicas: 2
   strategy:
