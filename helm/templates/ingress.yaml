@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: traefik-internal
 spec:
   rules:
-  - host: poc_argo.k8s.dev.gt.intranet.pags
+  - host: poc-argo.k8s.dev.gt.intranet.pags
     http:
       paths:
       - path: /
